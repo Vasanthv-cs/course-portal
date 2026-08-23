@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Easy Learn – C Course</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f4f4f4; }
+    header, footer { background:#333; color:#fff; text-align:center; padding:1rem; }
+    main { max-width:900px; margin:auto; padding:2rem; background:#fff; }
+    .code-box { background:#eee; padding:1rem; border-left:5px solid #008080; border-radius:5px; white-space:pre; overflow-x:auto; font-family:monospace; margin-bottom:0.5rem; }
+    .run-btn { display:inline-block; background:#008080; color:#fff; padding:0.5rem 1rem; border-radius:4px; text-decoration:none; margin-bottom:1rem; }
+    .run-btn:hover { background:#006666; }
+    h1,h2 { color:#333; }
+    form {background:#fafafa; padding:1rem; border:1px solid #ccc; border-radius:6px; }
+    form ol { padding-left:1.2rem; }
+    label { display:block; margin-bottom:0.5rem; color:#555; }
+    button { background:#008080; color:#fff; padding:0.5rem 1rem; border:none; border-radius:5px; cursor:pointer; }
+    button:hover { background:#006666; }
+    #quiz-result { margin-top:1rem; font-weight:bold; }
+/* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      background-color: #333;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1rem;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      padding: 6px 12px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #444;
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      top: 100%;
+      left: 0;
+      min-width: 160px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      border-radius: 6px;
+      z-index: 1000;
+    }
+
+    .dropdown-content li {
+      border-bottom: 1px solid #444;
+    }
+
+    .dropdown-content li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Easy Learn</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="courses.html">Courses</a>
+        <ul class="dropdown-content">
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="java.html">Java</a></li>
+          <li><a href="python.html">Python</a></li>
+          <li><a href="c.html">C</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="signin.html">Sign In</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Introduction to C</h2>
+    <p>C is a powerful, general-purpose programming language that's been influential in modern computing—forming the foundation of many operating systems, embedded systems, and performance-critical applications.</p>
+    <ul>
+      <li>Procedural and low-level access to memory</li>
+      <li>Compiled for fast execution</li>
+      <li>Used in system software, game development, IoT</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Example 1: Hello World</h2>
+    <div class="code-box">
+#include <stdio.h>
+
+int main() {
+  printf("Hello, World!\\n");
+  return 0;
+}
+    </div>
+    <a class="run-btn" href="https://onecompiler.com/c" target="_blank">Run Code on OneCompiler</a>
+    <p><strong>Explanation:</strong> This basic program uses <code>printf</code> from <code>stdio.h</code> to display a message. Every C program starts with <code>main()</code>.</p>
+  </section>
+
+  <section>
+    <h2>Example 2: Addition</h2>
+    <div class="code-box">
+#include <stdio.h>
+
+int main() {
+  int a = 5, b = 3;
+  printf("Sum = %d\\n", a + b);
+  return 0;
+}
+    </div>
+    <a class="run-btn" href="https://onecompiler.com/c" target="_blank">Run Code on OneCompiler</a>
+    <p><strong>Explanation:</strong> Declares two integers, adds them, and prints the result using <code>%d</code> format specifier.</p>
+  </section>
+
+  <section>
+    <h2>Example 3: Loop</h2>
+    <div class="code-box">
+#include <stdio.h>
+
+int main() {
+  for(int i = 1; i <= 5; i++) {
+    printf("%d ", i);
+  }
+  printf("\\n");
+  return 0;
+}
+    </div>
+    <a class="run-btn" href="https://onecompiler.com/c" target="_blank">Run Code on OneCompiler</a>
+    <p><strong>Explanation:</strong> A <code>for</code> loop prints numbers from 1 to 5, showcasing iteration in C.</p>
+  </section>
+
+  <section>
+    <h2>Example 4: Function</h2>
+    <div class="code-box">
+#include <stdio.h>
+
+int multiply(int x, int y) {
+  return x * y;
+}
+
+int main() {
+  int res = multiply(4, 5);
+  printf("Product = %d\\n", res);
+  return 0;
+}
+    </div>
+    <a class="run-btn" href="https://onecompiler.com/c" target="_blank">Run Code on OneCompiler</a>
+    <p><strong>Explanation:</strong> Defines a function <code>multiply</code>, calls it in <code>main()</code>, and prints the returned result.</p>
+  </section>
+
+  <section>
+    <h2>🧠 C Quiz</h2>
+    <form id="quiz-form">
+      <ol>
+        <li>Which header file is needed for <code>printf</code>?</li>
+        <label><input type="radio" name="q1" value="a"> <code>stdlib.h</code></label>
+        <label><input type="radio" name="q1" value="b"> <code>stdio.h</code></label>
+        <label><input type="radio" name="q1" value="c"> <code>math.h</code></label>
+
+        <li>How do you start the main function?</li>
+        <label><input type="radio" name="q2" value="a"> <code>void main()</code></label>
+        <label><input type="radio" name="q2" value="b"> <code>int main()</code></label>
+        <label><input type="radio" name="q2" value="c"> <code>function main()</code></label>
+
+        <li>What symbol is used to include a header file?</li>
+        <label><input type="radio" name="q3" value="a"> <code>&lt; &gt;</code></label>
+        <label><input type="radio" name="q3" value="b"> <code>" "</code></label>
+        <label><input type="radio" name="q3" value="c"> <code># </code></label>
+      </ol>
+      <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+    </form>
+    <div id="quiz-result"></div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Easy Learn. All rights reserved.</p>
+</footer>
+
+<script>
+function checkQuiz(){
+  const answers={q1:'b', q2:'b', q3:'a'};
+  let score=0;
+  ['q1','q2','q3'].forEach(q=>{
+    const sel=document.querySelector(`input[name="${q}"]:checked`);
+    if(sel && sel.value===answers[q]) score++;
+  });
+  const res=document.getElementById('quiz-result');
+  res.textContent=`You scored ${score} out of 3.`;
+  res.style.color = score===3 ? 'green' : 'orange';
+}
+</script>
+</body>
+</html>

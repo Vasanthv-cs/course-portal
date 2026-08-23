@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - Easy Learn</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+        }
+
+        .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      list-style: none;
+      padding: 0;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .dropdown-content li {
+      list-style: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #444;
+    }
+
+    /* ✅ Make dropdown appear on hover */
+    .nav-links li.dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+        .signin-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .signin-container h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .signin-form label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .signin-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .signin-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .signin-form button:hover {
+            background-color: #005bb5;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 40px;
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        .show-password {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .show-password input[type="checkbox"] {
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">Easy Learn</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="courses.html" class="dropbtn">Courses</a>
+                        <ul class="dropdown-content">
+                            <li><a href="html.html">HTML</a></li>
+                            <li><a href="css.html">CSS</a></li>
+                            <li><a href="java.html">Java</a></li>
+                            <li><a href="python.html">Python</a></li>
+                            <li><a href="c.html">C</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signin.html" class="signin-btn">Sign In</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="signin-container">
+            <h2>Sign In</h2>
+            <form class="signin-form" action="#" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <div class="show-password">
+                    <input type="checkbox" id="showPass" onclick="togglePassword()">
+                    <label for="showPass">Show Password</label>
+                </div>
+
+                <button type="submit">Sign In</button>
+            </form>
+            <p class="signup-link">Don't have an account? <a href="signup.html">Sign up here</a></p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Easy Learn. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function togglePassword() {
+            const passInput = document.getElementById("password");
+            passInput.type = passInput.type === "password" ? "text" : "password";
+        }
+  function togglePassword() {
+    const passInput = document.getElementById("password");
+    passInput.type = passInput.type === "password" ? "text" : "password";
+  }
+
+  document.querySelector(".signin-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+
+    const storedUser = JSON.parse(localStorage.getItem("easyLearnUser"));
+
+    if (storedUser && storedUser.username === username && storedUser.password === password) {
+      alert("Login successful!");
+      window.location.href = "dashboard.html";
+    } else {
+      alert("Invalid username or password.");
+    }
+  });
+
+    </script>
+
+</body>
+
+</html>

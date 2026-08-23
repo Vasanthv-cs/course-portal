@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Easy Learn</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f5f7;
+      color: #333;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 15px 30px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: #555;
+    }
+
+    .nav-links li.dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      list-style: none;
+      padding: 0;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 6px;
+      text-align: center;
+      z-index: 999;
+    }
+
+    .dropdown-content li {
+      border-bottom: 1px solid #444;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e3a46;
+      margin-bottom: 30px;
+    }
+
+    .about-section {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .about-section p {
+      line-height: 1.8;
+      margin: 15px 0;
+    }
+
+    .mission-vision {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .mission-box {
+      flex: 1;
+      background: #fefefe;
+      border-left: 5px solid #ffa726;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+
+    .mission-box h3 {
+      color: #2e3a46;
+      margin-bottom: 10px;
+    }
+
+    .team-section {
+      margin-top: 40px;
+    }
+
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .member {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .member img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .member h4 {
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .member p {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 50px;
+    }
+
+    footer .social-icons a {
+      color: #ffa726;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    footer p {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Easy Learn</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="courses.html">Courses</a>
+          <ul class="dropdown-content">
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="java.html">Java</a></li>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="c.html">C</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="signin.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <h1>About Easy Learn</h1>
+
+    <div class="about-section">
+      <p>Easy Learn is a modern and user-friendly platform built to empower learners at all levels. Whether you're a beginner exploring HTML or an experienced developer brushing up your skills, we make learning engaging, accessible, and practical.</p>
+
+      <p>We believe in hands-on learning, and our real-time code playground helps you write, test, and understand code live. Our team is committed to delivering the highest quality content, interactive lessons, and real-world examples that make learning to code fun and rewarding.</p>
+
+      <div class="mission-vision">
+        <div class="mission-box">
+          <h3>Our Mission</h3>
+          <p>To make high-quality tech education accessible to everyone, everywhere — with simplicity, innovation, and real-time practice tools.</p>
+        </div>
+        <div class="mission-box">
+          <h3>Our Vision</h3>
+          <p>To become a global hub for self-paced, project-based learning where future tech leaders begin their journey.</p>
+        </div>
+      </div>
+
+      <div class="team-section">
+        <h2 style="margin-top:40px; text-align:center; color:#2e3a46;">Meet Our Team</h2>
+        <div class="team-members">
+          <div class="member">
+            <img src="https://via.placeholder.com/80" alt="Founder">
+            <h4>Vasanth.V</h4>
+            <p>Founder & Developer</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/80" alt="Content Head">
+            <h4>Sanjay.S</h4>
+            <p>Content Strategist</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/80" alt="UI Designer">
+            <h4>Purushothaman</h4>
+            <p>UI/UX Designer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="social-icons">
+      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" title="Phone"><i class="fas fa-phone-alt"></i></a>
+    </div>
+    <p>© 2024 Easy Learn. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

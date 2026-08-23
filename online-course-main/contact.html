@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Easy Learn</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+     body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+        }
+
+        .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      list-style: none;
+      padding: 0;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .dropdown-content li {
+      list-style: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #444;
+    }
+
+    /* ✅ Make dropdown appear on hover */
+    .nav-links li.dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .contact-container {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .contact-container h2 {
+      font-size: 1.6rem;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+      background-color: #fff;
+      color: #2c3e50;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #2c3e50;
+      outline: none;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 12px;
+      background:#0073e6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: linear-gradient(to right, #34495e, #2c3e50);
+    }
+
+    .map-container {
+      margin-top: 30px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .contact-icons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .contact-icons a {
+      color: #2c3e50;
+      font-size: 18px;
+      border: 1px solid #2c3e50;
+      padding: 10px;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact-icons a:hover {
+      background-color: #2c3e50;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      font-size: 14px;
+      color: #fff;
+      margin-top: 40px;
+      border-top: 1px solid #1a252f;
+    }
+  </style>
+</head>
+<body>
+
+   <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">Easy Learn</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="courses.html" class="dropbtn">Courses</a>
+                        <ul class="dropdown-content">
+                            <li><a href="html.html">HTML</a></li>
+                            <li><a href="css.html">CSS</a></li>
+                            <li><a href="java.html">Java</a></li>
+                            <li><a href="python.html">Python</a></li>
+                            <li><a href="c.html">C</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signin.html" class="signin-btn">Sign In</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+  <!-- 📬 Contact Section -->
+  <main>
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- 🗺 Google Map -->
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1601.159645375496!2d77.82573602095174!3d12.741831159155629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae70c883f728a3%3A0xd71a6bc0275ac9be!2sHosur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1749796173802!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- 📱 Contact Icons -->
+      <div class="contact-icons">
+        <a href="tel:+919876543210" title="Call"><i class="fas fa-phone"></i></a>
+        <a href="https://wa.me/919876543210" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/easylearn" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </main>
+
+  <!-- 🔻 Footer -->
+  <footer>
+    &copy; 2024 Easy Learn. All rights reserved.
+  </footer>
+
+</body>
+</html>

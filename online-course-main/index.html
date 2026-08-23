@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Easy Learn — Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --main-bg: #f4f5f7;
+      --text-color: #333;
+      --primary: #ffa726;
+      --footer-bg: #333;
+    }
+
+    body.dark-mode {
+      --main-bg: #121212;
+      --text-color: #eee;
+      --footer-bg: #000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--main-bg);
+      color: var(--text-color);
+      transition: background 0.4s, color 0.4s;
+    }
+
+    header {
+      background: #333;
+      padding: 15px 30px;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: #555;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      padding: 0;
+      list-style: none;
+      min-width: 160px;
+      z-index: 1000;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 6px;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links li:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content li {
+      border-bottom: 1px solid #444;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-top: 15px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 40px;
+    }
+
+    .feature-box {
+      background: #fff;
+      border-left: 5px solid var(--primary);
+      border-radius: 8px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    body.dark-mode .feature-box {
+      background: #1e1e1e;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-box i {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .progress-section, .quiz-section {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .progress-section h2, .quiz-section h2 {
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .progress-bar {
+      width: 80%;
+      background: #ddd;
+      height: 20px;
+      margin: 10px auto;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar span {
+      display: block;
+      height: 100%;
+      background: var(--primary);
+      width: 60%;
+    }
+
+    .quiz-section button {
+      padding: 10px 20px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .quiz-section button:hover {
+      background: #fb8c00;
+    }
+
+    .toggle-dark {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      z-index: 1001;
+    }
+
+    footer {
+      background: var(--footer-bg);
+      color: #fff;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 50px;
+    }
+
+    .social-icons a {
+      color: var(--primary);
+      margin: 0 10px;
+      font-size: 1.3rem;
+      text-decoration: none;
+    }
+
+    footer p {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DARK MODE BUTTON -->
+  <button class="toggle-dark" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Easy Learn</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="courses.html">Courses</a>
+          <ul class="dropdown-content">
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="java.html">Java</a></li>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="c.html">C</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="signin.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="hero">
+      <h1>Welcome to Easy Learn</h1>
+      <p>Empower your learning journey with hands-on courses, real-time coding, and progress tracking!</p>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="features">
+      <div class="feature-box">
+          <a  href="https://onecompiler.com/java" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-laptop-code"></i>
+        <h4>Code Playground</h4>
+        </a>
+        <p>Try HTML, CSS, and JS instantly.</p>
+          </a>
+      </div>
+      <div class="feature-box">
+         <a href="courses.html" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-certificate"></i>
+        <h4>Certificates</h4>
+        <p>Earn certificates as you learn.</p>
+        </a>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-comments"></i>
+         <a href="contact.html" style="text-decoration: none; color: inherit;">
+        <h4>24/7 Support</h4>
+        <p>Ask your doubts anytime.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- COURSE HIGHLIGHTS -->
+    <section class="course-highlights">
+      <h2 style="color: var(--primary); text-align:center; margin-top: 60px;">Top Courses</h2>
+      <div class="features">
+        <div class="feature-box">
+           <a href="html.html" style="text-decoration: none; color: inherit;">
+          <i class="fab fa-html5"></i>
+          <h4>HTML for Beginners</h4>
+          <p>Master the building blocks of the web.</p>
+          </a>
+        </div>
+        <div class="feature-box">
+          <a href="css.html" style="text-decoration: none; color: inherit;">
+          <i class="fab fa-css3-alt"></i>
+          <h4>CSS Mastery</h4>
+          <p>Style and animate your sites beautifully.</p>
+          </a>
+        </div>
+        <div class="feature-box">
+          <a href="java.html" style="text-decoration: none; color: inherit;">
+          <i class="fab fa-js"></i>
+          <h4>Java Essentials</h4>
+          <p>Make your websites interactive and dynamic.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRESS TRACKER -->
+    <div class="progress-section">
+      <h2>Your Learning Progress</h2>
+      <div class="progress-bar">
+        <span style="width: 60%;"></span>
+      </div>
+      <p>5% Completed — Keep Going!</p>
+    </div>
+
+    <!-- QUIZ SECTION -->
+    <div class="quiz-section">
+      <h2>Ready for a Quiz?</h2>
+      <p>Test your knowledge and challenge yourself!</p>
+      <button onclick="alert('Quiz feature coming soon!')">Start Quiz</button>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <h2 style="color: var(--primary); text-align:center; margin-top: 60px;">What Our Learners Say</h2>
+      <div class="features">
+        <div class="feature-box">
+          <p>"Easy Learn made web development super easy! The live code editor is my favorite."</p>
+          <strong>– Vasanth V.</strong>
+        </div>
+        <div class="feature-box">
+          <p>"Loved the interactive quizzes and certificates. It's a must for beginners."</p>
+          <strong>–Sanjay S.</strong>
+        </div>
+        <div class="feature-box">
+          <p>"Progress tracking and real-time feedback helped me stay focused and consistent."</p>
+          <strong>– Purushothaman S.</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq">
+      <h2 style="color: var(--primary); text-align:center; margin-top: 60px;">Frequently Asked Questions</h2>
+      <div class="features">
+        <div class="feature-box">
+          <h4>Is Easy Learn free?</h4>
+          <p>Yes! Most content is free. Premium perks may require login.</p>
+        </div>
+        <div class="feature-box">
+          <h4>Do I need coding experience?</h4>
+          <p>No! Our beginner-friendly guides help you start from scratch.</p>
+        </div>
+        <div class="feature-box">
+          <h4>Can I earn certificates?</h4>
+          <p>Yes! Complete modules and quizzes to get certificates.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/vinz_e_ditz?utm_source=qr&igsh=anlnbnpiOWVtdzEy"><i class="fab fa-instagram"></i></a>
+      <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fas fa-phone-alt"></i></a>
+    </div>
+    <p>&copy; 2024 Easy Learn. All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
+</html>

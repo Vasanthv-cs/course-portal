@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn HTML — Easy Learn</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f5f7;
+      color: #333;
+    }
+    header, footer {
+      background: #333;
+      color: #fff;
+      padding: 15px 30px;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .nav-links a:hover {
+      background: #555;
+    }
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      list-style: none;
+      padding: 0;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .dropdown-content li {
+      list-style: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #444;
+    }
+
+    /* ✅ Make dropdown appear on hover */
+    .nav-links li.dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .nav-links li.dropdown {
+  position: relative;
+}
+
+
+    h1 {
+      text-align: center;
+      color: #2e3a46;
+      margin-bottom: 20px;
+    }
+    .html-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .html-content h2 {
+      color: #2e3a46;
+      margin-top: 30px;
+      border-bottom: 2px solid #ffa726;
+      padding-bottom: 8px;
+    }
+    .html-content p, .html-content li {
+      line-height: 1.7;
+      margin: 15px 0;
+    }
+    .run-button {
+      margin-top: 5px;
+      display: inline-block;
+      padding: 8px 12px;
+      background: #ffa726;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .run-button:hover {
+      background: #fb8c00;
+    }
+    textarea.editor {
+      width: 100%;
+      height: 150px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    iframe {
+      width: 100%;
+      height: 0;
+      border: 2px solid #ddd;
+      margin: 10px 0 30px;
+      border-radius: 5px;
+      display: none;
+    }
+    iframe.active {
+      height: 200px;
+      display: block;
+    }
+    select {
+      padding: 8px 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Easy Learn</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+                        <a href="courses.html" class="dropbtn">Courses</a>
+                        <ul class="dropdown-content">
+                            <li><a href="html.html">HTML</a></li>
+                            <li><a href="css.html">CSS</a></li>
+                            <li><a href="java.html">Java</a></li>
+                            <li><a href="python.html">Python</a></li>
+                            <li><a href="c.html">C</a></li>
+                        </ul>
+                    </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="signin.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Learn HTML with Interactive Examples</h1>
+    <div class="html-content">
+
+      <h2>📘 Common HTML Tags & Usage</h2>
+      <ul>
+        <li><strong>&lt;!DOCTYPE&gt;:</strong> Defines the document type</li>
+        <li><strong>&lt;html&gt;:</strong> Root of the document</li>
+        <li><strong>&lt;head&gt;:</strong> Meta & title info</li>
+        <li><strong>&lt;title&gt;:</strong> Title in browser tab</li>
+        <li><strong>&lt;body&gt;:</strong> Main content area</li>
+        <li><strong>&lt;h1&gt;-&lt;h6&gt;:</strong> Headings (1 is largest)</li>
+        <li><strong>&lt;p&gt;:</strong> Paragraphs</li>
+        <li><strong>&lt;a&gt;:</strong> Links</li>
+        <li><strong>&lt;img&gt;:</strong> Images</li>
+        <li><strong>&lt;br&gt;, &lt;hr&gt;:</strong> Line break and horizontal line</li>
+        <li><strong>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;:</strong> Lists</li>
+        <li><strong>&lt;table&gt;, &lt;tr&gt;, &lt;td&gt;:</strong> Tables</li>
+        <li><strong>&lt;div&gt;, &lt;span&gt;:</strong> Containers</li>
+        <li><strong>&lt;form&gt;, &lt;input&gt;, &lt;button&gt;:</strong> Forms</li>
+      </ul>
+
+      <h2>📄 Basic HTML Page</h2>
+      <p>This is the structure of a full HTML document:</p>
+      <textarea class="editor" id="editor1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;My Page&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome to HTML!&lt;/h1&gt;
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+      <button class="run-button" onclick="runLive('editor1','out1')">Run Code</button>
+      <iframe id="out1"></iframe>
+
+      <h2>🔗 Links</h2>
+      <textarea class="editor" id="editor2">&lt;a href="https://openai.com" target="_blank"&gt;Visit OpenAI&lt;/a&gt;</textarea>
+      <button class="run-button" onclick="runLive('editor2','out2')">Run Code</button>
+      <iframe id="out2"></iframe>
+
+      <h2>🖼 Images</h2>
+      <textarea class="editor" id="editor3">&lt;img src="https://via.placeholder.com/200" alt="Example Image"&gt;</textarea>
+      <button class="run-button" onclick="runLive('editor3','out3')">Run Code</button>
+      <iframe id="out3"></iframe>
+
+      <h2>📋 Forms</h2>
+      <textarea class="editor" id="editor4">&lt;form&gt;
+  &lt;label&gt;Name: &lt;input type="text"&gt;&lt;/label&gt;
+  &lt;br&gt;
+  &lt;label&gt;Email: &lt;input type="email"&gt;&lt;/label&gt;
+  &lt;br&gt;
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</textarea>
+      <button class="run-button" onclick="runLive('editor4','out4')">Run Code</button>
+      <iframe id="out4"></iframe>
+
+      <h2>📊 Tables</h2>
+      <textarea class="editor" id="editor5">&lt;table border="1"&gt;
+  &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Alice&lt;/td&gt;&lt;td&gt;25&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</textarea>
+      <button class="run-button" onclick="runLive('editor5','out5')">Run Code</button>
+      <iframe id="out5"></iframe>
+
+      <h2>🧠 Quiz Time (Select Correct Answer)</h2>
+      <label>1. What does &lt;p&gt; represent in HTML?</label><br>
+      <select>
+        <option>Paragraph ✅</option>
+        <option>Page</option>
+        <option>Print</option>
+        <option>None</option>
+      </select><br>
+
+      <label>2. Which tag is used for inserting an image?</label><br>
+      <select>
+        <option>&lt;img&gt; ✅</option>
+        <option>&lt;src&gt;</option>
+        <option>&lt;image&gt;</option>
+        <option>&lt;pic&gt;</option>
+      </select><br>
+
+      <label>3. Which tag creates a link?</label><br>
+      <select>
+        <option>&lt;a&gt; ✅</option>
+        <option>&lt;link&gt;</option>
+        <option>&lt;href&gt;</option>
+        <option>&lt;url&gt;</option>
+      </select><br>
+
+      <label>4. What is the root element of an HTML page?</label><br>
+      <select>
+        <option>&lt;html&gt; ✅</option>
+        <option>&lt;head&gt;</option>
+        <option>&lt;body&gt;</option>
+        <option>&lt;main&gt;</option>
+      </select><br>
+
+      <label>5. Which tag is used for line breaks?</label><br>
+      <select>
+        <option>&lt;br&gt; ✅</option>
+        <option>&lt;break&gt;</option>
+        <option>&lt;lb&gt;</option>
+        <option>&lt;newline&gt;</option>
+      </select><br>
+
+      <label>6. Which tag is used to group inline elements?</label><br>
+      <select>
+        <option>&lt;span&gt; ✅</option>
+        <option>&lt;div&gt;</option>
+        <option>&lt;section&gt;</option>
+        <option>&lt;p&gt;</option>
+      </select><br>
+
+      <label>7. Which tag is used to define a table row?</label><br>
+      <select>
+        <option>&lt;tr&gt; ✅</option>
+        <option>&lt;td&gt;</option>
+        <option>&lt;th&gt;</option>
+        <option>&lt;table&gt;</option>
+      </select><br>
+
+      <label>8. Which tag defines a form field for entering an email?</label><br>
+      <select>
+        <option>&lt;input type="email"&gt; ✅</option>
+        <option>&lt;email&gt;</option>
+        <option>&lt;input type="text"&gt;</option>
+        <option>&lt;form&gt;</option>
+      </select><br>
+
+    </div>
+  </main>
+
+  <footer>
+    © 2024 Easy Learn. All rights reserved.
+  </footer>
+
+  <script>
+    function runLive(editorId, frameId) {
+      const code = document.getElementById(editorId).value;
+      const iframe = document.getElementById(frameId);
+      iframe.srcdoc = code;
+      iframe.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses - Easy Learn</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f1f1;
+      color: #2c3e50;
+    }
+
+    header {
+      background: #333;
+      padding: 15px 30px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      padding: 6px 10px;
+      transition: background 0.3s, border-radius 0.3s;
+    }
+
+    .nav-links li a:hover {
+      background-color: #444;
+      border-radius: 4px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      list-style: none;
+      padding: 0;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .dropdown-content li {
+      list-style: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #444;
+    }
+
+    /* ✅ Make dropdown appear on hover */
+    .nav-links li.dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    .course-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .course-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .course-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+      color: #2c3e50;
+    }
+
+    .course-card p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .course-card a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: #2c3e50;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .course-card a:hover {
+      background: #34495e;
+    }
+
+    .skills-section,
+    .interview-section {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 50px;
+    }
+
+    .skills-section h3,
+    .interview-section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    .skills-list span {
+      background-color: #ecf0f1;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin: 5px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+
+    .skills-list span:hover {
+      background-color: #2c3e50;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .interview-section ul {
+      padding-left: 20px;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      font-size: 14px;
+      color: #fff;
+      border-top: 1px solid #1a252f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Header -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Easy Learn</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="courses.html" class="dropbtn">Courses</a>
+          <ul class="dropdown-content">
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="java.html">Java</a></li>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="c.html">C</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="signin.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 📘 Courses Section -->
+  <main>
+
+    <!-- 🌟 Featured Skills -->
+    <section class="skills-section">
+      <h3>Featured Skills You'll Gain</h3>
+      <div class="skills-list">
+        <span><a href="html.html" style="text-decoration: none; color: inherit;">HTML5</a></span><span><a href="css.html" style="text-decoration: none; color: inherit;">CSS3</a></span><span>JavaScript</span><span>React.js</span><span>Node.js</span>
+        <span>MongoDB</span><span>Git & GitHub</span><span>APIs</span><span>Docker</span><span>Firebase</span>
+        <span>Machine Learning</span><span>Linux</span><span>Networking</span><span>UI Design</span><span>SQL</span>
+      </div>
+    </section>
+
+    <h2>Explore Our Courses</h2>
+    <div class="course-container">
+      <div class="course-card">
+        <h3>Web Development</h3>
+        <p>Learn HTML, CSS, JavaScript, and frameworks like React and Angular.</p><a href="https://youtu.be/FYErehuSuuw?si=9oNXnCj5EGDoXD1Z">Explore</a>
+      </div>
+      <div class="course-card">
+        <h3>Python Programming</h3>
+        <p>Master Python for automation, AI, data science, and scripting.</p><a href="https://www.youtube.com/watch?v=m67-bOpOoPU&t=1s&pp=ygUScHl0aG9uIGZ1bGwgY291cnNl">Explore</a>
+      </div>
+      <div class="course-card">
+        <h3>Java Development</h3>
+        <p>Object-oriented programming and backend development using Java.</p><a href="https://www.youtube.com/watch?v=IT2durkDCXM&list=PLvepBxfiuao2qCm6QgUay9LUAehVbGlOb">Explore</a>
+      </div>
+      <div class="course-card">
+        <h3>Data Science</h3>
+        <p>Analyze and visualize data, and build ML models using real-world data.</p><a href="https://www.youtube.com/watch?v=-ETQ97mXXF0&pp=ygUYZGF0YSBzY2llbmNlIGZ1bGwgY291cnNl">Explore</a>
+      </div>
+      <div class="course-card">
+        <h3>Mobile App Development</h3>
+        <p>Develop Android apps using Java/Kotlin or cross-platform tools like Flutter.</p><a href="https://www.youtube.com/watch?v=jpuMWVlEd54&pp=ygUdbW9iaWxlIGFwcCBkZXZlbG9wbWVudCBjb3Vyc2XSBwkJ3gkBhyohjO8%3D">Explore</a>
+      </div>
+      <div class="course-card">
+        <h3>DevOps & Cloud</h3>
+        <p>CI/CD pipelines, Docker, Kubernetes, AWS, Azure, and GCP skills.</p><a href="https://www.youtube.com/watch?v=jpWj2kKcen4&pp=ygUGZGV2b3Bz">Explore</a>
+      </div>
+      <div class="course-card">
+        <h3>Cybersecurity</h3>
+        <p>Understand ethical hacking, network security, and cyber laws.</p><a href="https://www.youtube.com/watch?v=hXSFdwIOfnE&pp=ygUVY3liZXIgc2VjdXJpdHkgY291cnNl">Explore</a>
+      </div>
+      <div class="course-card">
+        <h3>UI/UX Design</h3>
+        <p>Design user-friendly interfaces and experiences using Figma and Adobe XD.</p><a href="https://www.youtube.com/watch?v=BU_afT-aIn0&pp=ygUTdWkgdXggZGVzaWduIGNvdXJzZQ%3D%3D">Explore</a>
+      </div>
+      <div class="course-card">
+        <h3>AI & Machine Learning</h3>
+        <p>Master AI, neural networks, and deep learning using Python and TensorFlow.</p><a href="https://www.youtube.com/watch?v=MqffbpjhriQ&pp=ygUYYWkgY291cnNlcyBmb3IgYmVnaW5uZXJz">Explore</a>
+      </div>
+      <div class="course-card">
+        <h3>Blockchain Development</h3>
+        <p>Learn how to create decentralized apps using Solidity and Ethereum.</p><a href="https://www.youtube.com/watch?v=amAq-WHAFs8&pp=ygUUYmxvY2tjaGFpbiBkZXZlbG9wZXI%3D">Explore</a>
+      </div>
+      <div class="course-card">
+        <h3>Game Development</h3>
+        <p>Build 2D and 3D games using Unity and Unreal Engine.</p><a href="https://www.youtube.com/watch?v=AmGSEH7QcDg&pp=ygUXZ2FtZSBkZXZlbG9wbWVudCBjb3Vyc2U%3D">Explore</a>
+      </div>
+      <div class="course-card">
+        <h3>Embedded Systems</h3>
+        <p>Design low-level embedded systems using C, Microcontrollers, and IoT.</p><a href="https://www.youtube.com/watch?v=UOszjaXHTRE&list=PLvrp29TqIfVgFqdhIaL44NquCDr4Ajebt">Explore</a>
+      </div>
+    </div>
+
+    <!-- 🧠 Interview Questions -->
+    <section class="interview-section">
+      <h3>Top Interview Questions</h3>
+      <ul>
+        <li>What is the difference between var, let, and const in JavaScript?</li>
+        <li>Explain how promises work in asynchronous JavaScript.</li>
+        <li>What is the difference between REST and GraphQL?</li>
+        <li>How does React's virtual DOM work?</li>
+        <li>Explain the concept of normalization in databases.</li>
+        <li>How do you manage state in a large-scale React application?</li>
+        <li>What are the advantages of using Docker in development?</li>
+        <li>Explain how authentication works using JWT.</li>
+        <li>What is the difference between HTTP and HTTPS?</li>
+        <li>How would you secure a web application?</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- 🔻 Footer -->
+  <footer>
+    &copy; 2024 Easy Learn. All rights reserved.
+  </footer>
+
+</body>
+
+</html>

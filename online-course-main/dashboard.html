@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Easy Learn</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .nav-links a:hover {
+      background-color: #555;
+    }
+
+    .dashboard-container {
+      max-width: 800px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashboard-container h2 {
+      color: #333;
+    }
+
+    .dashboard-container p {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .logout-btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #c9302c;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">Easy Learn</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="signin.html">Sign Out</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="dashboard-container">
+      <h2>Welcome to Easy Learn!</h2>
+      <p id="welcomeMsg">Loading...</p>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Easy Learn. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("easyLearnUser"));
+    const welcomeMsg = document.getElementById("welcomeMsg");
+
+    if (user && user.username) {
+      welcomeMsg.textContent = `Hello, ${user.username}! You have successfully signed in.`;
+    } else {
+      welcomeMsg.textContent = "No user is signed in. Redirecting...";
+      setTimeout(() => {
+        window.location.href = "signin.html";
+      }, 2000);
+    }
+
+    function logout() {
+      localStorage.removeItem("easyLearnUser");
+      alert("Logged out successfully!");
+      window.location.href = "signin.html";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Easy Learn - Java Course</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+     header,footer {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      background-color: #333;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1rem;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      padding: 6px 12px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #444;
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      top: 100%;
+      left: 0;
+      min-width: 160px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      border-radius: 6px;
+      z-index: 1000;
+    }
+
+    .dropdown-content li {
+      border-bottom: 1px solid #444;
+    }
+
+    .dropdown-content li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background: white;
+    }
+
+    .code-box {
+      background: #eee;
+      padding: 1rem;
+      border-left: 5px solid #FF5722;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      font-family: monospace;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    .run-btn {
+      display: inline-block;
+      margin-bottom: 2rem;
+      background: #FF5722;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .run-btn:hover {
+      background-color: #e64a19;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    p, li {
+      color: #555;
+    }
+
+    form {
+      background: #fafafa;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    form ol {
+      padding-left: 1.2rem;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    button {
+      background-color: #FF5722;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e64a19;
+    }
+
+    #quiz-result {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Easy Learn</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="courses.html">Courses</a>
+        <ul class="dropdown-content">
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="java.html">Java</a></li>
+          <li><a href="python.html">Python</a></li>
+          <li><a href="c.html">C</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="signin.html">Sign In</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Introduction to Java</h2>
+    <p>Java is a popular, high-level, object-oriented programming language developed by Sun Microsystems (now owned by Oracle). It is widely used in enterprise applications, Android development, and server-side software.</p>
+    <ul>
+      <li>Platform independent: Write once, run anywhere</li>
+      <li>Object-oriented and secure</li>
+      <li>Used in web apps, mobile apps, desktop software, and games</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>1. Hello World</h2>
+    <div class="code-box">
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello, World!");
+  }
+}
+    </div>
+    <a class="run-btn" target="_blank" href="https://onecompiler.com/java">Run Code on OneCompiler</a>
+  </section>
+
+  <section>
+    <h2>2. Addition of Two Numbers</h2>
+    <div class="code-box">
+public class Addition {
+  public static void main(String[] args) {
+    int a = 5;
+    int b = 3;
+    int sum = a + b;
+    System.out.println("Sum = " + sum);
+  }
+}
+    </div>
+    <a class="run-btn" target="_blank" href="https://onecompiler.com/java">Run Code on OneCompiler</a>
+  </section>
+
+  <section>
+    <h2>3. Subtraction Example</h2>
+    <div class="code-box">
+public class Subtract {
+  public static void main(String[] args) {
+    int a = 10;
+    int b = 4;
+    System.out.println("Difference = " + (a - b));
+  }
+}
+    </div>
+    <a class="run-btn" target="_blank" href="https://onecompiler.com/java">Run Code on OneCompiler</a>
+  </section>
+
+  <section>
+    <h2>4. Loop (Print Numbers 1 to 5)</h2>
+    <div class="code-box">
+public class LoopDemo {
+  public static void main(String[] args) {
+    for (int i = 1; i <= 5; i++) {
+      System.out.println(i);
+    }
+  }
+}
+    </div>
+    <a class="run-btn" target="_blank" href="https://onecompiler.com/java">Run Code on OneCompiler</a>
+  </section>
+
+  <section>
+    <h2>5. Function to Multiply</h2>
+    <div class="code-box">
+public class Multiply {
+  public static int product(int x, int y) {
+    return x * y;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Product = " + product(4, 5));
+  }
+}
+    </div>
+    <a class="run-btn" target="_blank" href="https://onecompiler.com/java">Run Code on OneCompiler</a>
+  </section>
+
+  <section>
+    <h2>🧠 Java Quiz</h2>
+    <form id="quiz-form">
+      <ol>
+        <li>
+          <p>Which keyword is used to define a class in Java?</p>
+          <label><input type="radio" name="q1" value="a"> class</label>
+          <label><input type="radio" name="q1" value="b"> define</label>
+          <label><input type="radio" name="q1" value="c"> structure</label>
+        </li>
+        <li>
+          <p>What does JVM stand for?</p>
+          <label><input type="radio" name="q2" value="a"> Java Visual Machine</label>
+          <label><input type="radio" name="q2" value="b"> Java Virtual Machine</label>
+          <label><input type="radio" name="q2" value="c"> Java Verified Method</label>
+        </li>
+        <li>
+          <p>Which method is the entry point of a Java program?</p>
+          <label><input type="radio" name="q3" value="a"> start()</label>
+          <label><input type="radio" name="q3" value="b"> main()</label>
+          <label><input type="radio" name="q3" value="c"> init()</label>
+        </li>
+      </ol>
+      <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+    </form>
+    <div id="quiz-result"></div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Easy Learn. All rights reserved.</p>
+</footer>
+
+<script>
+  function checkQuiz() {
+    const answers = {
+      q1: "a",
+      q2: "b",
+      q3: "b"
+    };
+
+    let score = 0;
+    for (let q in answers) {
+      const selected = document.querySelector(`input[name="${q}"]:checked`);
+      if (selected && selected.value === answers[q]) {
+        score++;
+      }
+    }
+
+    const result = document.getElementById("quiz-result");
+    result.textContent = `You scored ${score} out of 3.`;
+    result.style.color = score === 3 ? "green" : "orange";
+  }
+</script>
+
+</body>
+</html>

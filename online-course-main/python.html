@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Easy Learn – Python Course</title>
+  <style>
+    body {font-family: Arial,sans-serif; margin:0; background:#f4f4f4;}
+    header,footer {background:#333;color:#fff;text-align:center;padding:1rem;}
+    main {max-width:900px;margin:auto;padding:2rem;background:#fff;}
+    .code-box {background:#eee;padding:1rem;border-left:5px solid #00aaff; border-radius:5px;white-space:pre; overflow-x:auto; font-family:monospace; margin-bottom:0.5rem;}
+    .run-btn {display:inline-block;background:#00aaff;color:#fff;padding:0.5rem 1rem;border-radius:4px;text-decoration:none;margin-bottom:1rem;}
+    .run-btn:hover {background:#008ecc;}
+    h1,h2 {color:#333;}
+    ul, li, p {color:#555;}
+    form {background:#fafafa;padding:1rem;border:1px solid #ccc;border-radius:6px;}
+    form ol {padding-left:1.2rem;}
+    label {display:block;margin-bottom:0.5rem;}
+    button{background:#00aaff;color:#fff;padding:0.5rem 1rem;border:none;border-radius:5px;cursor:pointer;}
+    button:hover{background:#008ecc;}
+    #quiz-result{margin-top:1rem;font-weight:bold;}
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      background-color: #333;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1rem;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      padding: 6px 12px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #444;
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      top: 100%;
+      left: 0;
+      min-width: 160px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      border-radius: 6px;
+      z-index: 1000;
+    }
+
+    .dropdown-content li {
+      border-bottom: 1px solid #444;
+    }
+
+    .dropdown-content li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Easy Learn</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="courses.html">Courses</a>
+        <ul class="dropdown-content">
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="java.html">Java</a></li>
+          <li><a href="python.html">Python</a></li>
+          <li><a href="c.html">C</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="signin.html">Sign In</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Introduction to Python</h2>
+    <p>Python is an interpreted, high-level programming language known for its readability and versatile usage—from web development and data science to automation and AI.</p>
+    <ul>
+      <li>Easy-to-read syntax</li>
+      <li>Large standard library</li>
+      <li>Backed by vast community ecosystems</li>
+      <li>Widely used in education and industry</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Example 1: Hello World</h2>
+    <div class="code-box">
+print("Hello, World!")
+    </div>
+    <a class="run-btn" href="https://onecompiler.com/python" target="_blank">Run Code on OneCompiler</a>
+  </section>
+
+  <section>
+    <h2>Example 2: Addition</h2>
+    <div class="code-box">
+a = 5  
+b = 3  
+print("Sum =", a + b)
+    </div>
+    <a class="run-btn" href="https://onecompiler.com/python" target="_blank">Run Code on OneCompiler</a>
+  </section>
+
+  <section>
+    <h2>Example 3: Loop</h2>
+    <div class="code-box">
+for i in range(1, 6):  
+    print(i)
+    </div>
+    <a class="run-btn" href="https://onecompiler.com/python" target="_blank">Run Code on OneCompiler</a>
+  </section>
+
+  <section>
+    <h2>Example 4: Function</h2>
+    <div class="code-box">
+def multiply(x, y):  
+    return x * y  
+
+print("Product =", multiply(4, 5))
+    </div>
+    <a class="run-btn" href="https://onecompiler.com/python" target="_blank">Run Code on OneCompiler</a>
+  </section>
+
+  <section>
+    <h2>🧠 Python Quiz</h2>
+    <form id="quiz-form">
+      <ol>
+        <li>What function is used to display output?</li>
+        <label><input type="radio" name="q1" value="a"> echo()</label>
+        <label><input type="radio" name="q1" value="b"> print()</label>
+        <label><input type="radio" name="q1" value="c"> output()</label>
+
+        <li>How do you define a function?</li>
+        <label><input type="radio" name="q2" value="a"> function foo():</label>
+        <label><input type="radio" name="q2" value="b"> def foo():</label>
+        <label><input type="radio" name="q2" value="c"> fn foo():</label>
+
+        <li>Which keyword is used for loops?</li>
+        <label><input type="radio" name="q3" value="a"> loop</label>
+        <label><input type="radio" name="q3" value="b"> for</label>
+        <label><input type="radio" name="q3" value="c"> iterate</label>
+      </ol>
+      <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+    </form>
+    <div id="quiz-result"></div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Easy Learn. All rights reserved.</p>
+</footer>
+
+<script>
+function checkQuiz(){
+  const answers={q1:'b',q2:'b',q3:'b'};
+  let score=0, total=3;
+  for(let q in answers){
+    const sel=document.querySelector('input[name="'+q+'"]:checked');
+    if(sel && sel.value===answers[q]) score++;
+  }
+  const res=document.getElementById('quiz-result');
+  res.textContent=`You scored ${score} out of ${total}.`;
+  res.style.color=(score===total?'green':'orange');
+}
+</script>
+</body>
+</html>
